@@ -17,9 +17,26 @@ body{
     top: 0;
     left: 0;
     height: 100%;
-    width: 240px;
+    width: 78px;
     background-color: $primary-color;
     padding: 6px 14px;
+    transition-property: width;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+
+    &.active{
+        width: 240px;
+
+        .logo_content{
+
+            .logo{
+                opacity: 1;
+            }
+        }
+        #btn{
+            left: 90%;
+        }
+    }
 
     .logo_content{
 
@@ -30,6 +47,8 @@ body{
             height: $icon-dimension;
             width: 100%;
             align-items: center;
+            opacity: 0;
+            pointer-events: none;
 
             i{
                 // font-size: 28px;
@@ -47,7 +66,7 @@ body{
     #btn{
         position: absolute;
         color: $icon-color;
-        left: 90%;
+        left: 50%;
         top: 6px;
         font-size: 1.25rem;
         height: $icon-dimension;

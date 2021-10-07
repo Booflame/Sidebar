@@ -19,9 +19,27 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 240px;
+  width: 78px;
   background-color: #11101e;
   padding: 6px 14px;
+  -webkit-transition-property: width;
+  transition-property: width;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.sidebar.active {
+  width: 240px;
+}
+
+.sidebar.active .logo_content .logo {
+  opacity: 1;
+}
+
+.sidebar.active #btn {
+  left: 90%;
 }
 
 .sidebar .logo_content .logo {
@@ -34,6 +52,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .sidebar .logo_content .logo i {
@@ -49,7 +69,7 @@ body {
 .sidebar #btn {
   position: absolute;
   color: white;
-  left: 90%;
+  left: 50%;
   top: 6px;
   font-size: 1.25rem;
   height: 50px;
