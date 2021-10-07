@@ -1,3 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 240px;
+  background-color: #11101e;
+  padding: 6px 14px;
+}
+
+.sidebar .logo_content .logo {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar .logo_content .logo i {
+  font-size: 1.75rem;
+  margin-right: 0.2em;
+}
+
+.sidebar .logo_content .logo .logo_name {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.sidebar #btn {
+  position: absolute;
+  color: white;
+  left: 90%;
+  top: 6px;
+  font-size: 1.25rem;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.sidebar ul {
+  margin-right: 1.25rem;
+}
+
+.sidebar ul li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  margin: 0 5px;
+  list-style: none;
+}
+
+.sidebar ul li input {
+  position: absolute;
+  color: white;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1d1b31;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  padding-left: 50px;
+  font-size: 1.125rem;
+}
+
+.sidebar ul li .bx-search {
+  position: absolute;
+  color: white;
+  font-size: 1.5rem;
+  z-index: 9;
+}
+
+.sidebar ul li i {
+  height: 50px;
+  min-width: 50px;
+  line-height: 50px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  border-radius: 12px;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.sidebar ul li a:hover {
+  color: #11101e;
+  background-color: white;
 }
