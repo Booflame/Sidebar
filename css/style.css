@@ -73,6 +73,17 @@ body {
   list-style: none;
 }
 
+.sidebar ul li:hover .tooltip {
+  top: 50%;
+  opacity: 1;
+  -webkit-transition-property: top, opacity;
+  transition-property: top, opacity;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+}
+
 .sidebar ul li input {
   position: absolute;
   color: white;
@@ -93,6 +104,25 @@ body {
   color: white;
   font-size: 1.5rem;
   z-index: 9;
+}
+
+.sidebar ul li .tooltip {
+  position: absolute;
+  left: 125px;
+  top: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 35px;
+  width: 125px;
+  line-height: 35px;
+  border-radius: 6px;
+  background-color: white;
+  text-align: center;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0;
+  transition: 0;
+  opacity: 0;
 }
 
 .sidebar ul li i {
@@ -117,11 +147,80 @@ body {
   transition-property: color, background-color;
   -webkit-transition-duration: 400ms;
           transition-duration: 400ms;
-  -webkit-transition-timing-function: ease;
-          transition-timing-function: ease;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
 }
 
 .sidebar ul li a:hover {
   color: #11101e;
   background-color: white;
+}
+
+.sidebar .profile_content {
+  position: absolute;
+  color: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.sidebar .profile_content .profile {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+  background-color: #1d1b31;
+}
+
+.sidebar .profile_content .profile .profile_details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar .profile_content .profile .profile_details img {
+  height: 50px;
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+
+.sidebar .profile_content .profile .profile_details .name_job {
+  margin-left: 10px;
+}
+
+.sidebar .profile_content .profile .profile_details .name_job .name {
+  font-size: 15px;
+  font-weight: 400px;
+}
+
+.sidebar .profile_content .profile .profile_details .name_job .job {
+  font-size: 12px;
+}
+
+.sidebar .profile_content .profile #logout {
+  position: absolute;
+  right: -0.5rem;
+  bottom: 5px;
+  min-width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 12px;
+}
+
+.home_content {
+  position: absolute;
+  height: 100%;
+  width: calc(100%-240px);
+  left: 240px;
+}
+
+.home_content .text {
+  font-size: 25px;
+  font-weight: 500;
+  color: #1d1b31;
+  margin: 12px;
 }
