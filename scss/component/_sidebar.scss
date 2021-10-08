@@ -1,0 +1,283 @@
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background-color: $primary-color;
+    padding: 6px 14px;
+    transition-property: width;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+
+    &.active{
+        width: 240px;
+        
+        ~ .home_content{
+            width: calc(100% - 240px);
+            left: 240px;
+        }
+    }
+
+    &.active{
+        .links_name{
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    .links_name{
+        opacity: 0;
+        pointer-events: none;
+        transition: all 500ms ease;
+    }
+    
+    &.active{
+        .logo_content{
+            .logo{
+                opacity: 1;
+                pointer-events: none;
+            }
+        }
+    }
+
+    .logo_content{
+
+
+        .logo{
+            color: $icon-color;
+            display: flex;
+            height: $icon-dimension;
+            width: 100%;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 500ms ease;
+
+            i{
+                // font-size: 28px;
+                font-size: 1.75rem;
+                // margin-right: 5px;
+                margin-right: 0.2em;
+            }
+            .logo_name{
+                // font-size: 20px;
+                font-size: 1.25rem;
+                font-weight: 400;
+            }
+        }
+    }
+    
+    &.active{
+
+        #btn{
+            left: 90%;
+        }
+    }
+
+    #btn{
+        position: absolute;
+        color: $icon-color;
+        left: 50%;
+        top: 6px;
+        font-size: 1.25rem;
+        height: $icon-dimension;
+        width: $icon-dimension;
+        line-height: $icon-dimension;
+        text-align: center;
+        transform: translateX(-50%);
+    }
+    
+    &.active{
+        ul{
+            li{
+                .tooltip{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    ul{
+        margin-top: 1.25rem;
+
+        li{
+            position: relative;
+            height: $icon-dimension;
+            width: 100%;
+            line-height: $icon-dimension;
+            list-style: none;
+
+            &:hover{
+
+                .tooltip{
+                    top: 50%;
+                    opacity: 1;
+                    transition-property: top, opacity;
+                    transition-duration: 500ms;
+                    transition-timing-function: ease;
+                }
+            }
+
+            input{
+                position: absolute;
+                color: $icon-color;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                background-color: $primary-color-alt;
+                border-radius: 12px;
+                outline: none;
+                border: none;
+                padding-left: $icon-dimension;
+                font-size: 1.125rem;
+            }
+            .bx-search{
+                position: absolute;
+                color: $icon-color;
+                font-size: 1.5rem;
+                z-index: 9;
+                transition-property: color, background-color;
+                transition-duration: 500ms;
+                transition-timing-function: ease;
+
+                &:hover{
+                    background-color: $icon-color;
+                    color: $primary-color-alt;
+                }
+            }
+            .tooltip{
+                position: absolute;
+                left: 125px;
+                top: 0;
+                transform: translate(-50%, -50%);
+                height: 35px;
+                width: 125px;
+                line-height: 35px;
+                border-radius: 6px;
+                background-color: $icon-color;
+                text-align: center;
+                box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.2);
+                transition: 0;
+                opacity: 0;
+                display: block;
+            }
+
+            i{
+                height: $icon-dimension;
+                min-width: $icon-dimension;
+                line-height: $icon-dimension;
+                border-radius: 12px;
+                text-align: center;
+            }
+
+            a{
+                color: $icon-color;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                border-radius: 12px;
+                transition-property: color, background;
+                transition-duration: 1000ms;
+                transition-timing-function: ease;
+                white-space: nowrap;
+
+
+                &:hover{
+                    color: $primary-color;
+                    background-color: $icon-color;
+
+                }
+            }
+        }
+    }
+
+    &.active{
+        .profile_content{
+            .profile{
+                background-color: $primary-color-alt;
+
+                .profile_details{
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+                #logout{
+                    left: 88%;
+                    background: none;
+
+                }
+            }
+        }
+    }
+
+    .profile_content{
+        position: absolute;
+        color: $icon-color;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        
+        .profile{
+            position: relative;
+            padding: 10px 6px;
+            height: 60px;
+            transition: all 500ms ease;
+            background: none;
+
+            .profile_details{
+                display: flex;
+                align-items: center;
+                opacity: 0;
+                pointer-events: none;
+                white-space: nowrap;
+
+                img{
+                    height: $icon-dimension;
+                    width: $icon-dimension;
+                    object-fit: cover;
+                    border-radius: 12px;
+                }
+                .name_job{
+                    margin-left: 10px;
+
+                    .name{
+                        font-size: 15px;
+                        font-weight: 400px;
+                    }
+                    .job{
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            #logout{
+                position: absolute;
+                bottom: 5px;
+                left: 50%;
+                transform: translateX(-50%);
+                min-width: $icon-dimension;
+                line-height: $icon-dimension;
+                font-size: 20px;
+                border-radius: 12px;
+                text-align: center;
+                transition: all 500ms ease;
+                background: $primary-color-alt;
+            }
+        }
+    }
+}
+.home_content{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 500ms ease;
+
+    .text{
+        font-size: 25px;
+        font-weight: 500;
+        color: $primary-color-alt;
+        margin: 12px;
+    }
+}
