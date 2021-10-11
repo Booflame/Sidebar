@@ -3,11 +3,11 @@ const btn = document.getElementById("btn");
 const sidebar = document.querySelector(".sidebar")
 const searchBtn = document.querySelector(".bx-search");
 
-btn.onclick = function(){
+btn.onclick = () => {
     sidebar.classList.toggle("active");
     menuBtnChange();
 }
-searchBtn.onclick = function() {
+searchBtn.onclick = () => {
     sidebar.classList.toggle("active");
     menuBtnChange();
 }
